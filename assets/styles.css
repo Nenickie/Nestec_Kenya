@@ -40,8 +40,9 @@ header {
 }
 
 .logo img {
-  height: 50px;
+  height: 80px;
   margin-right: 10px;
+  width: 50px;
 }
 
 .nav-text {
@@ -51,15 +52,12 @@ header {
   color: #000;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-desktop {
-  display: flex;
-  align-items: center;
+nav.nav-desktop {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 150px;
 }
 
 .nav-links {
@@ -81,12 +79,15 @@ nav {
   font-weight: bold;
 }
 
+/* Menu Icon */
 .menu-icon {
-  display: none; /* Hidden by default */
+  display: none;
   cursor: pointer;
-  width: 30px; /* Adjust size as needed */
-  height: auto;
   margin-left: 20px;
+}
+
+.menu-icon img {
+  width: 30px; /* Adjust as needed */
 }
 
 /* Mobile Menu */
@@ -96,7 +97,7 @@ nav {
 
 .nav-mobile.active {
   display: block;
-  background-color: #fff; /* Adjust background color if needed */
+  background-color: #fff; /* Adjust as needed */
   position: absolute;
   top: 90px; /* Adjust based on header height */
   right: 0;
@@ -333,19 +334,13 @@ footer form button:hover {
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .nav-desktop {
-      display: none;
+    display: none;
   }
 
   .menu-icon {
-      display: block;
-      color: #000;
-  }
-
-  .nav-mobile {
-      display: none;
+    display: block;
   }
 }
-
 
 @media (max-width: 768px) {
   .hero-content h1 {
