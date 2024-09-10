@@ -24,16 +24,16 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  font-family: "Roboto", sans-serif;
+  background: #fff;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   padding: 5px 0;
   height: 90px;
-  border-bottom: rgb(15, 170, 10) 3px solid;
+  border-bottom: #0fab0a 3px solid;
   z-index: 1000;
-  margin-bottom: auto;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -52,12 +52,14 @@ header {
 }
 
 nav {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 150px;
-  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -75,8 +77,49 @@ nav {
 }
 
 .nav-links a:hover {
-  color: rgb(15, 170, 10);
+  color: #0fab0a;
   font-weight: bold;
+}
+
+.menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+  margin-left: 20px;
+}
+
+/* Mobile Menu */
+.nav-mobile {
+  display: none;
+}
+
+.nav-mobile.active {
+  display: block;
+  background-color: #fff; /* Adjust background color if needed */
+  position: absolute;
+  top: 90px; /* Adjust based on header height */
+  right: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-mobile .nav-links {
+  display: block;
+  padding: 0;
+}
+
+.nav-mobile .nav-links li {
+  margin: 10px 0;
+}
+
+.nav-mobile .nav-links a {
+  font-size: 18px;
+  color: #333;
+  text-transform: none;
+  font-weight: normal;
 }
 
 /* Hero Section */
@@ -120,7 +163,7 @@ nav {
 
 .cta-btn {
   padding: 12px 30px;
-  background-color: rgb(15, 170, 10);
+  background-color: #0fab0a;
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -130,7 +173,7 @@ nav {
 }
 
 .cta-btn:hover {
-  background-color: rgb(12, 140, 8);
+  background-color: #0c8c08;
 }
 
 /* About Section */
@@ -144,7 +187,7 @@ nav {
   text-align: center;
   font-size: 50px;
   font-weight: 900;
-  color: rgb(15, 170, 10);
+  color: #0fab0a;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
 }
@@ -154,9 +197,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-
 }
-.about-content p{
+
+.about-content p {
   font-size: 20px;
   font-weight: 700;
   text-align: center;
@@ -182,7 +225,6 @@ nav {
   border-radius: 1px;
   margin-bottom: 20px;
 }
-
 
 /* Services Section */
 .services-section {
@@ -230,11 +272,13 @@ footer {
 .footer-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer-col {
   flex: 1;
   text-align: center;
+  margin: 10px;
 }
 
 .footer-col h3 {
@@ -244,31 +288,102 @@ footer {
 
 .footer-col ul {
   list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 10px 0;
 }
 
 .footer-col ul li a {
   text-decoration: none;
   color: #efefef;
-  margin-bottom: 10px;
-  display: block;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer form input {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 300px;
 }
 
 footer form button {
-  background-color: rgb(15, 170, 10);
+  background-color: #0fab0a;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  max-width: 300px;
 }
 
 footer form button:hover {
-  background-color: rgb(12, 140, 8);
+  background-color: #0c8c08;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .nav-desktop {
+      display: none;
+  }
+
+  .menu-icon {
+      display: block;
+      color: #000;
+  }
+
+  .nav-mobile {
+      display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .about-content p {
+    font-size: 18px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+
+  .footer-col {
+    margin: 10px 0;
+  }
+
+  footer form input, 
+  footer form button {
+    font-size: 14px;
+  }
 }

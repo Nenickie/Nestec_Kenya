@@ -16,16 +16,26 @@
                 <img src="assets/images/Nestec.logo.jpeg" alt="Nestec Tea Logo">
                 <span class="nav-text">Nestec Tea</span>
             </div>
-            <nav>
+            <nav class="nav-desktop">
                 <ul class="nav-links">
                     <li><a href="#hero-section">Home</a></li>
                     <li><a href="#about-section">About</a></li>
                     <li><a href="#services-section">Services</a></li>
                     <li><a href="#contact-section">Contact</a></li>
                 </ul>
+                <img src="/assets/images/menu.png" alt="Menu Icon" class="menu-icon" onclick="toggleMenu()">
             </nav>
         </div>
     </header>
+
+    <nav class="nav-mobile" id="mobileMenu">
+        <ul class="nav-links">
+            <li><a href="#hero-section">Home</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#services-section">Services</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </ul>
+    </nav>
 
     <section id="hero-section" class="hero-section">
         <div class="overlay"></div>
@@ -109,5 +119,12 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
