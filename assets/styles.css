@@ -24,13 +24,13 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
-  color: #000;
-  font-family: 'Roboto', sans-serif;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   padding: 5px 0;
   height: 90px;
-  border-bottom: #0fab0a 3px solid;
+  border-bottom: rgb(15, 170, 10) 3px solid;
   z-index: 1000;
 }
 
@@ -40,9 +40,12 @@ header {
 }
 
 .logo img {
-  height: 80px;
+  height: 100px;
   margin-right: 10px;
-  width: 50px;
+  padding-bottom: 10px;
+  width: 100px;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
 }
 
 .nav-text {
@@ -75,7 +78,7 @@ nav.nav-desktop {
 }
 
 .nav-links a:hover {
-  color: #0fab0a;
+  color: rgb(15, 170, 10);
   font-weight: bold;
 }
 
@@ -84,43 +87,13 @@ nav.nav-desktop {
   display: none;
   cursor: pointer;
   margin-left: 20px;
+  width: 30px; /* Adjust size as needed */
+  height: auto;
 }
 
 .menu-icon img {
-  width: 30px; /* Adjust as needed */
-}
-
-/* Mobile Menu */
-.nav-mobile {
-  display: none;
-}
-
-.nav-mobile.active {
-  display: block;
-  background-color: #fff; /* Adjust as needed */
-  position: absolute;
-  top: 90px; /* Adjust based on header height */
-  right: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.nav-mobile .nav-links {
-  display: block;
-  padding: 0;
-}
-
-.nav-mobile .nav-links li {
-  margin: 10px 0;
-}
-
-.nav-mobile .nav-links a {
-  font-size: 18px;
-  color: #333;
-  text-transform: none;
-  font-weight: normal;
+  width: 100%; /* Ensure image fits container */
+  height: auto;
 }
 
 /* Hero Section */
@@ -164,7 +137,7 @@ nav.nav-desktop {
 
 .cta-btn {
   padding: 12px 30px;
-  background-color: #0fab0a;
+  background-color: rgb(15, 170, 10);
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -174,7 +147,7 @@ nav.nav-desktop {
 }
 
 .cta-btn:hover {
-  background-color: #0c8c08;
+  background-color: rgb(12, 140, 8);
 }
 
 /* About Section */
@@ -188,7 +161,7 @@ nav.nav-desktop {
   text-align: center;
   font-size: 50px;
   font-weight: 900;
-  color: #0fab0a;
+  color: rgb(15, 170, 10);
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
 }
@@ -317,7 +290,7 @@ footer form input {
 }
 
 footer form button {
-  background-color: #0fab0a;
+  background-color: rgb(15, 170, 10);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -328,7 +301,7 @@ footer form button {
 }
 
 footer form button:hover {
-  background-color: #0c8c08;
+  background-color: rgb(12, 140, 8);
 }
 
 /* Responsive Styles */
@@ -339,6 +312,10 @@ footer form button:hover {
 
   .menu-icon {
     display: block;
+  }
+
+  .nav-mobile {
+    display: none;
   }
 }
 
@@ -381,4 +358,41 @@ footer form button:hover {
   footer form button {
     font-size: 14px;
   }
+}
+
+/* Mobile Navigation */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-mobile.active {
+  transform: translateX(0);
+}
+
+.nav-mobile .nav-links {
+  flex-direction: column;
+  padding: 20px;
+}
+
+.nav-mobile .nav-links a {
+  font-size: 18px;
+  padding: 15px 0;
+  color: #333;
+  text-align: center;
+  display: block;
+}
+
+.nav-mobile .nav-links a:hover {
+  color: rgb(15, 170, 10);
+  font-weight: bold;
 }
