@@ -29,16 +29,20 @@ header {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   padding: 5px 0;
-  height: 90px;
+  height: 80px;
   border-bottom: rgb(15, 170, 10) 3px solid;
   z-index: 1000;
+  display: flex; /* Use flexbox to align content */
+  align-items: center; /* Vertically center logo and content */
+  justify-content: space-between; /* Align content across the width */
 }
 
 .logo img {
-  max-height: 80px; /* Set a maximum height for the logo */
-  width: auto;      /* Maintain aspect ratio */
-  padding-bottom: 0; /* Remove bottom padding */
-  margin-top: 5px;  /* Adjust top margin if needed */
+  width: 175px; /* Adjust this size according to the available space */
+  height: auto; /* Maintain the aspect ratio */
+  max-height: 175px; /* Set a maximum height so it fits within the header */
+  display: block;
+  margin-left: 0px; /* Adjust margin if you want space around the logo */
 }
 
 .nav-text {
@@ -59,11 +63,12 @@ nav.nav-desktop {
   list-style: none;
   display: flex;
   gap: 30px;
+  padding-right: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   text-transform: uppercase;
   font-weight: 500;
