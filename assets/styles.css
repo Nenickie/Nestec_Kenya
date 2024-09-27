@@ -267,6 +267,15 @@ nav.nav-desktop {
   margin-bottom: 10px;
 }
 
+.copyright{
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  margin-left: 30%;
+  margin-bottom: 0;
+  align-items: baseline;
+}
+
 .footer-col p, .footer-links, .contact-info {
   font-size: 16px;
   color: #555;
