@@ -257,8 +257,9 @@ nav.nav-desktop {
 }
 
 .footer-logo {
-  width: 200px;
+  width: 250px;
   margin-bottom: 0px;
+  height: 100%;
 }
 
 .footer-col h4 {
