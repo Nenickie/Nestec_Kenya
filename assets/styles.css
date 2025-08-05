@@ -171,14 +171,26 @@ nav.nav-desktop {
 .about-content {
   display: block;
   justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  /*align-items: center;
+  text-align: center;*/
+  margin: 0 auto;
 }
 
 .about-content p {
   font-size: 20px;
   font-weight: 700;
-  text-align: center;
+   margin-bottom: 10px;   /* Adds space below each paragraph */
+   padding-bottom: 5px;   /* Adds extra padding below each paragraph */
+  /*text-align: center;*/
+}
+
+.space {
+    padding-top: 5px; /* Adds space between paragraphs */
+    padding-bottom: 5px; /* Adds space below paragraphs */
+}
+.partner {
+    font-size: 21px;
+    font-weight: 700;
 }
 
 .who-we-are {
@@ -187,45 +199,38 @@ nav.nav-desktop {
     margin-right: auto;
     display: block;
 }
+/* Desktop styles */
 .about-cards-stacked {
     position: relative;
-    width: 220px;   /* Smaller width for tighter stacking */
-    height: 220px;  /* Smaller height for tighter stacking */
-    margin-left: 0;
+    width: 320px;
+    height: 320px;
+    max-width: 350px;
+    max-height: 350px;
+    min-width: 150px;
+    min-height: 150px;
 }
 
 .about-card-img {
     position: absolute;
-    width: 140px;   /* Smaller images for better overlap */
-    height: 140px;
+    width: 180px;
+    height: 180px;
     border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     object-fit: cover;
     background: #fff;
     transition: box-shadow 0.3s;
-    border: 6px solid #F5F5DC; /* Optional: adds a border for separation */
+    border: 3px solid #F5F5DC;
 }
 
-.img1 {
-    top: 60px;
-    left: 0;
-    z-index: 1;
-}
-.img2 {
-    top: 30;
-    left: 40px;
-    z-index: 2;
-}
-.img3 {
-    top: 0px;
-    left: 80px;
-    z-index: 3;
-}
+.img1 { top: 60%; left: 0%; z-index: 1; }
+.img2 { top: 30%; left: 25%; z-index: 2; }
+.img3 { top: 0%; left: 55%; z-index: 3; }
+
 .about-flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 50px;
 }
 
 .about-image-col {
@@ -241,19 +246,37 @@ nav.nav-desktop {
     justify-content: center;
 }
 
-@media (max-width: 900px) {
-    .about-flex {
-        flex-direction: column;
-        gap: 20px;
+/* Mobile styles */
+@media (max-width: 600px) {
+  .about-section {
+        padding: 20px 10px;
     }
-    .about-image-col,
-    .about-content-col {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-}
 
+    .about-flex {
+        flex-direction: column-reverse; /* Move image on top */
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-image-col {
+        justify-content: center;
+        margin-top: -40px; /* Moves the image stack UP */
+    }
+
+    .about-cards-stacked {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-card-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .img1 { top: 60px; left: 0px; }
+    .img2 { top: 30px; left: 20px; }
+    .img3 { top: 0px; left: 40px; }
+}
 
 /* Services Section */
 .services-section {
